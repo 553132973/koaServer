@@ -1,0 +1,35 @@
+{"data":{
+    "orderId":123455,
+"id":121312,
+"appealFlag":1,
+"status":10,
+"status_reason":34,
+"appealLeftTime":"剩余时间",
+"shipperName":"王大锤",
+"shipperContact":18697848484,
+"lineName":"王二锤",
+"lineContact":13965642449,
+"pickUpMethod":1,
+"payType":"发货人付款",
+"applyCancelInfo":{
+    "time":"时间",
+    "cancelReason":"取消原因",
+    "imgUrls":""
+},
+"sysDealInfo":{
+    "dealResult":"nihao",
+    "time":"时间"
+},
+"lineStateInfo":{
+    "time":"时间",
+    "stateReason":"取消原因",
+    "imgUrls":""
+},
+"appealResultInfo":{
+    "processStatusDesc":"dadas",
+"appealDispatchFare":"dadasd",
+"reason":"sadassa",
+"time":"时间",
+"modifier":"sdads"
+}
+}}
