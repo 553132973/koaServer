@@ -6,13 +6,16 @@ const url = "localhost:27017/blog";
 const db = monk(url);
 const collection = db.get("billDetail");
 const cancelDetailCollection = db.get("cancelDetail");
-router.prefix("/api/v1");
-router.get("/", async (ctx, next) => {
-  var result = await DB.find("article", {});
-  console.log(result);
-  await ctx.render("index", {
-    title: result[0]._id,
-  });
+
+router.get("/bar", async (ctx, next) => {
+  ctx.response.body = {
+    result: 1,
+    data: {
+      val: 1,
+      age: 1,
+      name: "王大锤",
+    },
+  };
 });
 
 router.post("/string", async (ctx, next) => {
