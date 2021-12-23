@@ -4,6 +4,7 @@ const DB = require("../config/db.js");
 router.prefix("/api/v1"); // 加前缀
 
 router.get("/", async (ctx, next) => {
+  console.log(111);
   var result = await DB.find("article", {});
   ctx.body = result;
 });

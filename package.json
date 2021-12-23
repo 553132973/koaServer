@@ -26,6 +26,7 @@
     "monk": "^7.3.4"
   },
   "devDependencies": {
+    "http-proxy-middleware": "^2.0.1",
     "nodemon": "^1.19.1"
   }
 }
