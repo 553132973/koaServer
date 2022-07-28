@@ -1,20 +1,15 @@
 const router = require("koa-router")();
 const monk = require("monk");
-const url = "localhost:27017/dbs";
+const url = "39.104.25.232:27017/local";
 const db = monk(url);
-const collection = db.get("billDetail");
-const cancelDetailCollection = db.get("cancelDetail");
-const dbsUser = db.get("user");
+const dbsUser = db.get("startup_log");
+router.prefix("/api/v1"); // 加前缀
 
-router.get("/bar", async (ctx, next) => {
-  ctx.response.body = {
-    result: 1,
-    data: {
-      val: 1,
-      age: 1,
-      name: "王大锤",
-    },
-  };
+db.then(() => {
+  console.log("111111111111");
+});
+router.post("/delete", async (ctx, next) => {
+  await dbsUser.remove({ _id: "foo" });
 });
 
 router.post("/add", async (ctx, next) => {
@@ -24,9 +19,8 @@ router.post("/add", async (ctx, next) => {
 });
 
 router.get("/getData", async (ctx, next) => {
-  console.log(ctx);
   let data = await dbsUser.find();
-  ctx.response.body = { status: 200, msg: "添加成功", data: data };
+  ctx.body = data;
 });
 
 router.post("/insertData", async (ctx, next) => {

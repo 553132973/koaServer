@@ -6,14 +6,14 @@ const url = "localhost:27017/blog";
 const db = monk(url);
 const collection = db.get("billDetail");
 const cancelDetailCollection = db.get("cancelDetail");
-
+router.prefix("/index"); // 加前缀
 router.get("/bar", async (ctx, next) => {
   ctx.response.body = {
     result: 1,
     data: {
-      val: 1,
+      val: "ss",
       age: 1,
-      name: "王大锤",
+      name: "index",
     },
   };
 });
@@ -22,7 +22,10 @@ router.post("/string", async (ctx, next) => {
   var result = await DB.add("editData", { age: ctx.request.body.age });
   ctx.response.body = result;
 });
-
+router.post("/delete", async (ctx, next) => {
+  console.log(ctx);
+  await dbsUser.remove({ _id: "foo" });
+});
 router.post("/article", async (ctx, next) => {
   console.log(222);
   var result = await DB.add("article", {

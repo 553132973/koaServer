@@ -19,14 +19,6 @@ app.use(
 app.use(json());
 app.use(logger());
 app.use(require("koa-static")(__dirname + "/public"));
-
-// app.use(
-//   proxy("/api/v1", {
-//     target: "http://localhost:7000",
-//     pathRewrite: { "^/api/v1": "" },
-//     changeOrigin: true,
-//   })
-// );
 app.use(
   views(__dirname + "/views", {
     extension: "ejs",
@@ -47,8 +39,7 @@ app.use(frontPage.routes(), frontPage.allowedMethods());
 app.on("error", (err, ctx) => {
   console.error("server error", err, ctx);
 });
-
 module.exports = app;
 
 // 启动项目是 npm run dev
-// 端口是 3000
+// 端口是 3001
